@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate App</title>
+    <script src="https://telegram.org"></script>
+    <style>
+        body { font-family: sans-serif; background: #1c1c1d; color: white; display: flex; flex-direction: column; align-items: center; padding: 20px; margin: 0; }
+        .container { width: 100%; max-width: 400px; }
+        .progress-box { margin: 20px 0; }
+        .bar-bg { background: #333; border-radius: 15px; height: 20px; overflow: hidden; }
+        .bar-fill { background: #248bed; width: 50%; height: 100%; transition: 0.3s; }
+        .stats { display: flex; justify-content: space-between; font-size: 14px; margin-top: 5px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .btn { background: #2c2c2e; border: none; border-radius: 12px; padding: 18px; color: white; font-weight: bold; font-size: 16px; cursor: pointer; }
+        .btn:active { background: #3a3a3c; transform: scale(0.98); }
+        .wide { grid-column: span 2; background: #248bed; }
+        .menu { background: #3a3a3c; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Поддержать канал</h2>
+        <div class="progress-box">
+            <div class="bar-bg"><div class="bar-fill"></div></div>
+            <div class="stats"><span>12 500 ₴</span><span>цель 25 000 ₴</span></div>
+        </div>
+        <div class="grid">
+            <button class="btn" onclick="send('5_uah')">5 ₴</button>
+            <button class="btn" onclick="send('1_eur')">1 €</button>
+            <button class="btn" onclick="send('1_usd')">1 $</button>
+            <button class="btn" onclick="send('1_ton')">💎 1 $ TON</button>
+            <button class="btn wide" onclick="send('custom')">Своя сумма</button>
+            <button class="btn wide menu" onclick="openMenu()">МЕНЮ</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
